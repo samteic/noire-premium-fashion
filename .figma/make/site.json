@@ -1,0 +1,10 @@
+{
+  "description": "Showcases premium fashion collections with a visually stunning, responsive design, enhancing the shopping experience for fashion enthusiasts.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
