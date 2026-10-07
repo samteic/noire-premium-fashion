@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useEffect, useState } from "react"
-import { initialCartItems } from "@/data/products"
 import type { CartItemType, Product } from "@/types"
 
 export type CurrencyCode = "USD" | "EUR" | "GBP" | "SEK"
@@ -80,32 +79,22 @@ interface ShopContextType {
 
 const ShopContext = createContext<ShopContextType | undefined>(undefined)
 
-const INITIAL_WISHLIST: WishlistItem[] = [
-  {
-    id: "wishlist-1",
-    name: "Embroidered Seersucker Shirt",
-    price: 99,
-    image: "b895e.png",
-    category: "V-Neck T-Shirt",
-  },
-]
-
 export function ShopProvider({ children }: { children: React.ReactNode }) {
   const [cartItems, setCartItems] = useState<CartItemType[]>(() => {
     try {
       const saved = localStorage.getItem("noire_cart")
-      return saved ? JSON.parse(saved) : initialCartItems
+      return saved ? JSON.parse(saved) : []
     } catch {
-      return initialCartItems
+      return []
     }
   })
 
   const [wishlist, setWishlist] = useState<WishlistItem[]>(() => {
     try {
       const saved = localStorage.getItem("noire_wishlist")
-      return saved ? JSON.parse(saved) : INITIAL_WISHLIST
+      return saved ? JSON.parse(saved) : []
     } catch {
-      return INITIAL_WISHLIST
+      return []
     }
   })
 

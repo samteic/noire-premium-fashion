@@ -108,13 +108,13 @@ export default function MobileMenuDrawer({
           className="sidebar-stagger-left flex items-center justify-between pb-5 border-b border-neutral-200"
           style={{ transitionDelay: isOpen ? "90ms" : "0ms" }}
         >
-          <div className="flex items-center gap-2.5">
-            <img
-              src={`${ASSETS_PATH}/5fbaf.svg`}
-              alt="NOIRÉ"
-              className="w-6 h-6"
-            />
-            <span className="text-xs font-bold tracking-[3px]">NOIRÉ</span>
+          <div className="flex flex-col">
+            <span className="brand-wordmark-title text-base">
+              NOIRÉ
+            </span>
+            <span className="brand-wordmark-subtitle text-[7px] text-neutral-400">
+              PARIS
+            </span>
           </div>
           <button
             type="button"

@@ -103,7 +103,7 @@ export default function Navbar({ page = "home" }: NavbarProps) {
         {/* Center Zone: Brand NOIRÉ (Strictly dead-centered inside header) */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-20">
           <a
-            className="brand flex flex-col items-center justify-center cursor-pointer pointer-events-auto transition-transform duration-200 hover:scale-105 select-none"
+            className="brand flex flex-col items-center justify-center cursor-pointer pointer-events-auto transition-opacity duration-200 hover:opacity-70 select-none py-1 group"
             href="#top"
             aria-label="NOIRÉ home"
             onClick={(e) => {
@@ -115,19 +115,11 @@ export default function Navbar({ page = "home" }: NavbarProps) {
               }
             }}
           >
-            <picture className="flex items-center justify-center">
-              <source
-                media="(max-width: 640px)"
-                srcSet={`${ASSETS_PATH}/cb75f.svg`}
-              />
-              <img
-                src={`${ASSETS_PATH}/5fbaf.svg`}
-                alt="NOIRÉ"
-                className="w-7 h-7 sm:w-8 sm:h-8 lg:w-9 lg:h-9 object-contain block"
-              />
-            </picture>
-            <span className="font-extrabold tracking-[3.5px] sm:tracking-[4px] text-[10px] sm:text-[11px] uppercase mt-1 leading-none pl-[3.5px]">
+            <span className="brand-wordmark-title text-[21px] sm:text-[25px] md:text-[27px]">
               NOIRÉ
+            </span>
+            <span className="brand-wordmark-subtitle text-[8px] sm:text-[9px]">
+              PARIS
             </span>
           </a>
         </div>

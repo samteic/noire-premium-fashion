@@ -2,7 +2,6 @@ import { useEffect } from "react"
 import { useShop } from "@/context/ShopContext"
 import { ASSETS_PATH } from "@/data/products"
 
-const FREE_SHIPPING_THRESHOLD_USD = 300
 
 export default function CartDrawer() {
   const {
@@ -33,11 +32,6 @@ export default function CartDrawer() {
     }
   }, [isCartOpen, setIsCartOpen])
 
-  const amountNeeded = Math.max(0, FREE_SHIPPING_THRESHOLD_USD - cartSubtotal)
-  const shippingProgress = Math.min(
-    100,
-    Math.round((cartSubtotal / FREE_SHIPPING_THRESHOLD_USD) * 100),
-  )
 
   return (
     <div
@@ -82,36 +76,6 @@ export default function CartDrawer() {
           </button>
         </div>
 
-        {/* Free Express Shipping Meter */}
-        <div
-          className="sidebar-stagger-right my-4 p-3 bg-neutral-50 border border-neutral-200"
-          style={{ transitionDelay: isCartOpen ? "140ms" : "0ms" }}
-        >
-          <div className="flex items-center justify-between text-[11px] uppercase tracking-wider mb-2 font-medium">
-            {amountNeeded > 0 ? (
-              <span>
-                Add{" "}
-                <strong className="text-black">
-                  {formatPrice(amountNeeded)}
-                </strong>{" "}
-                for Free Express Courier
-              </span>
-            ) : (
-              <span className="text-black font-bold flex items-center gap-1.5">
-                <span>✦</span> Complimentary Express Courier Unlocked
-              </span>
-            )}
-            <span className="text-neutral-500 font-mono text-[10px]">
-              {shippingProgress}%
-            </span>
-          </div>
-          <div className="w-full h-1.5 bg-neutral-200 overflow-hidden rounded-full">
-            <div
-              className="h-full bg-black transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
-              style={{ width: `${shippingProgress}%` }}
-            />
-          </div>
-        </div>
 
         {/* Items List */}
         {cartItems.length === 0 ? (

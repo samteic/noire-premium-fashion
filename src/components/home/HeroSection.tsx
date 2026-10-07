@@ -13,10 +13,6 @@ export default function HeroSection() {
               <span className="text-black">SUITS</span>
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-200 bg-neutral-50 text-[10px] uppercase tracking-[2px] font-bold text-neutral-600 mb-4">
-              <span>✦ NOIRÉ PARIS</span>
-            </div>
-
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase tracking-[2px] leading-[0.95] text-neutral-900 mb-5">
               Luxury
               <br />
@@ -63,15 +59,15 @@ export default function HeroSection() {
           <div
             className="cursor-pointer group relative overflow-hidden bg-neutral-100 aspect-[3/4] rounded-xs shadow-md border border-neutral-200"
             onClick={() => {
-              window.location.hash = `product?name=${encodeURIComponent("Double-Faced Cashmere Trench")}`
+              window.location.hash = `product?name=${encodeURIComponent("Tailored Espresso Wool Overcoat")}`
             }}
-            title="View Double-Faced Cashmere Trench"
+            title="View Tailored Espresso Wool Overcoat"
           >
             <img
-              src="/assets/products/trench_front.jpg"
-              alt="Tailored in Paris"
+              src="/assets/img4.jpg"
+              alt="Tailored Espresso Wool Overcoat"
               className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
-              style={{ objectPosition: "50% 20%" }}
+              style={{ objectPosition: "50% 15%" }}
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
             <div className="absolute bottom-4 left-4 bg-black/85 backdrop-blur-xs text-white text-[10px] uppercase tracking-[1.5px] px-3 py-1 font-semibold">

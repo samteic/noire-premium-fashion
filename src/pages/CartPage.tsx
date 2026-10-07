@@ -36,12 +36,6 @@ export default function CartPage() {
   const discountedSubtotal = Math.max(0, cartSubtotal - appliedDiscount)
   const total = discountedSubtotal + (cartItems.length > 0 ? shipping : 0)
 
-  const amountNeeded = Math.max(0, FREE_SHIPPING_THRESHOLD_USD - cartSubtotal)
-  const shippingProgress = Math.min(
-    100,
-    Math.round((cartSubtotal / FREE_SHIPPING_THRESHOLD_USD) * 100),
-  )
-
   const handleApplyPromo = (e: React.FormEvent) => {
     e.preventDefault()
     const clean = promoCode.trim().toUpperCase()
@@ -165,30 +159,6 @@ export default function CartPage() {
               </svg>
               Saved Favourites ({wishlistCount})
             </button>
-          </div>
-        </div>
-
-        {/* Complimentary Express Courier Progress Banner */}
-        <div className="my-6 p-4 sm:p-5 bg-neutral-50 border border-neutral-200">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs uppercase tracking-wider mb-2.5">
-            {amountNeeded > 0 ? (
-              <span className="text-neutral-700 font-medium">
-                Add <strong className="text-black font-bold">{formatPrice(amountNeeded)}</strong> more to unlock <span className="font-bold text-black">Complimentary Worldwide Express Courier</span>
-              </span>
-            ) : (
-              <span className="text-black font-bold">
-                Complimentary Worldwide Express Courier Unlocked
-              </span>
-            )}
-            <span className="text-neutral-500 font-mono text-[11px]">
-              {shippingProgress}% to Free Shipping
-            </span>
-          </div>
-          <div className="w-full h-1.5 bg-neutral-200 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-black transition-all duration-500 ease-out"
-              style={{ width: `${shippingProgress}%` }}
-            />
           </div>
         </div>
 

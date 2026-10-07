@@ -42,9 +42,15 @@ export default function SiteFooter() {
       </div>
       <div className="footer-tech">
         <h3>Craft & Studio</h3>
-        <img src={`${ASSETS_PATH}/a0e30.svg`} alt="" />
         <div>
-          <strong>NOIRÉ</strong>
+          <strong
+            style={{
+              fontFamily: "'Cinzel', 'Cormorant Garamond', serif",
+              letterSpacing: "0.12em",
+            }}
+          >
+            NOIRÉ
+          </strong>
           <span>Paris Atelier</span>
         </div>
         <p>100% Quality Fabrics</p>

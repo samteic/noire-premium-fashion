@@ -206,9 +206,14 @@ export default function CheckoutPage() {
             >
               ← Return to Collections
             </button>
-            <span className="text-lg font-extrabold uppercase tracking-[4px]">
-              NOIRÉ
-            </span>
+            <div className="flex flex-col items-center">
+              <span className="brand-wordmark-title text-base sm:text-lg">
+                NOIRÉ
+              </span>
+              <span className="brand-wordmark-subtitle text-[7px]">
+                PARIS
+              </span>
+            </div>
             <button
               type="button"
               onClick={() => window.print()}
@@ -429,14 +434,19 @@ export default function CheckoutPage() {
             <span>←</span> Return to Shopping Bag
           </button>
 
-          <span
+          <div
             onClick={() => {
               window.location.hash = "home"
             }}
-            className="text-lg font-extrabold uppercase tracking-[4px] cursor-pointer"
+            className="flex flex-col items-center cursor-pointer transition-opacity hover:opacity-75"
           >
-            NOIRÉ
-          </span>
+            <span className="brand-wordmark-title text-base sm:text-lg">
+              NOIRÉ
+            </span>
+            <span className="brand-wordmark-subtitle text-[7px]">
+              PARIS
+            </span>
+          </div>
 
           <div className="flex items-center gap-1.5 text-[11px] text-neutral-500 uppercase tracking-wider">
             <svg
