@@ -52,6 +52,9 @@ export default function ProductDetailPage() {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" })
     setSelectedImage(productViews[0])
     setSelectedColor(activeProduct.color || "#111111")
+    if (activeProduct?.name) {
+      document.title = `${activeProduct.name} — NOIRÉ Paris`
+    }
   }, [activeProduct, productViews])
 
   // Loupe magnifier state

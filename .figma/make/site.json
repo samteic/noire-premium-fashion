@@ -1,5 +1,9 @@
 {
+  "title": "NOIRÉ — Luxury & Haute Couture",
   "description": "Showcases premium fashion collections with a visually stunning, responsive design, enhancing the shopping experience for fashion enthusiasts.",
+  "icons": {
+    "icon": "/favicon.svg"
+  },
   "robots": {
     "index": false
   },

@@ -17,6 +17,18 @@ function AppContent() {
   const { route, hash } = useHashRoute()
   const { isMenuOpen, setIsMenuOpen } = useShop()
 
+  // Update page title on route changes
+  useEffect(() => {
+    const titles: Record<string, string> = {
+      home: "NOIRÉ — Luxury & Haute Couture",
+      products: "Collections — NOIRÉ Paris",
+      product: "Product Details — NOIRÉ Paris",
+      cart: "Shopping Bag — NOIRÉ Paris",
+      checkout: "Private Checkout — NOIRÉ Paris",
+    }
+    document.title = titles[route] || "NOIRÉ — Luxury & Haute Couture"
+  }, [route])
+
   // Scroll to top on page route changes or scroll to target in-page section
   useEffect(() => {
     if (route === "home" && hash && hash !== "#top" && hash !== "#" && hash !== "") {
